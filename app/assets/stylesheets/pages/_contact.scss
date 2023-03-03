@@ -1,0 +1,20 @@
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-control {
+  font-size: 14px;
+  padding: 8px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.btn-primary {
+  font-size: 14px;
+  padding: 8px 12px;
+}
