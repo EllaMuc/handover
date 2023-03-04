@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'contact_forms/new'
   get 'contact_forms/create'
   get 'kontakt/index'
