@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+  get 'pages/price'
   get 'contact_forms/new'
   get 'contact_forms/create'
   get 'kontakt/index'
