@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_03_090856) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_05_123329) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,4 +22,64 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_090856) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "damages", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_damages_on_room_id"
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "type_of_key"
+    t.bigint "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_keys_on_property_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "address"
+    t.string "city"
+    t.integer "postcode"
+    t.date "move_in"
+    t.date "move_out"
+    t.bigint "user_id", null: false
+    t.boolean "visible"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_properties_on_user_id"
+  end
+
+  create_table "readings", force: :cascade do |t|
+    t.string "type_of_reading"
+    t.integer "result"
+    t.bigint "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_readings_on_property_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_rooms_on_property_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "damages", "rooms"
+  add_foreign_key "keys", "properties"
+  add_foreign_key "properties", "users"
+  add_foreign_key "readings", "properties"
+  add_foreign_key "rooms", "properties"
 end
