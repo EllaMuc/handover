@@ -1,5 +1,5 @@
 .background {
-  background-image: url('public/assets/images/background_image.jpg');
+  background-image: image_url('flat.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -12,5 +12,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 36px;
-  color: white;
+  color: black;
+}
+
+.font-awesome-font {
+  font-family: "Font Awesome 5 Free";
 }
