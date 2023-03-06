@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< Updated upstream
   get 'pages/about'
   get 'pages/price'
   get 'contact_forms/new'
@@ -6,6 +7,9 @@ Rails.application.routes.draw do
   get 'kontakt/index'
   get 'impressum/index'
   get 'pages/index', to: 'pages#index'
+=======
+  get '/about', to: 'pages#about'
+>>>>>>> Stashed changes
   get '/rooms', to: 'rooms#index'
   root to: "pages#home"
 
