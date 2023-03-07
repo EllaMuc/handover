@@ -2,8 +2,8 @@
   <div class="text-center font-awesome-font">
     Handover Certificate
     <div class="button-container">
-      <button class="btn btn-primary">Login</button>
-      <button class="btn btn-secondary">SignUp</button>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to "SignUp", new_user_registration_path, class: "btn btn-secondary" %>
     </div>
   </div>
 </div>
