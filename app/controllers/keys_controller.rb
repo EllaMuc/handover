@@ -8,16 +8,16 @@ class KeysController < ApplicationController
   end
 
   def new
-    @key = Key.new
-    @users = User.all
     @property = Property.find(params[:property_id])
-    render :new
+    @key = Key.new
   end
 
+
   def create
-    @key = Key.new(key_params)
-    if @key.save
-      redirect_to @key
+    @Key = Key.new(key_params)
+    @Key.property = Property.find(params[:property_id])
+    if @Key.save!
+      redirect_to properties_path
     else
       render :new
     end
@@ -45,6 +45,6 @@ class KeysController < ApplicationController
   private
 
   def key_params
-    params.require(:key).permit(:title, :description, :type_of_key, :property_id)
+    params.require(:key).permit(:title, :description, :type_of_key )
   end
 end
