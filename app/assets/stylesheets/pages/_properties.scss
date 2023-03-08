@@ -1,0 +1,59 @@
+/* Formularcontainer */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Textbeschriftung */
+label {
+  flex-basis: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Formularelemente */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Eingabefeldcontainer */
+.form-group {
+  flex-basis: 50%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.form-group:last-of-type {
+  padding-right: 0;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* Button */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
