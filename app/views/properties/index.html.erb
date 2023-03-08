@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Properties</h1>
+
+  <ul>
+    <% @properties.each do |property| %>
+      <li>
+        <%= property.address %>
+        <%= property.city %>
+        <%= property.postcode %>
+        <%= property.move_in %>
+        <%= property.move_out %>
+        <%= property.visible %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create Property", new_property_path, class: "btn btn-primary" %>
+</div>
