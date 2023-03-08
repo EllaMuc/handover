@@ -1,9 +1,13 @@
 .background {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('interior1.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('interior3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 100vh;
+}
+
+.dark{
+  filter: brightness(60%);
 }
 
 .text-center {
@@ -12,7 +16,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 36px;
-  color: black;
+  color: rgb(245,222,179);
 }
 
 .font-awesome-font {
