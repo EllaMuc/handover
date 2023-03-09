@@ -12,7 +12,11 @@ class PropertiesController < ApplicationController
     @property.visible = true
     @property.user = current_user
     @property.save!
-    redirect_to properties_path
+    redirect_to property_path
+  end
+
+  def show
+    @property = Property.find(params[:id])
   end
 
   private
