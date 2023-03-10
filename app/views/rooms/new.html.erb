@@ -1,0 +1,10 @@
+<h1>All Rooms</h1>
+
+<div class="container">
+  <%= simple_form_for [@property, @room] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.button :submit %>
+  <% end %>
+
+</div>
