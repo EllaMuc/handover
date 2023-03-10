@@ -1,7 +1,10 @@
 <h2>Log in</h2>
+<div class="form-inputs" form style="max-width:300px">
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+
+
+
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -13,8 +16,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+    <div class="form-inputs" form style="max-width:300px">
+      <%= f.button :submit, "Log in",  class: "form-inputs btn btn-primary btn-block" %>
+    </div>
 
+  </div>
+  <% end %>
+</div>
 <%= render "devise/shared/links" %>
