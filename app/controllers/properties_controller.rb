@@ -24,3 +24,5 @@ class PropertiesController < ApplicationController
       params.require(:property).permit(:address, :city, :postcode, :move_in, :move_out, :visible)
     end
 end
+
+#attempting to fix git hub
