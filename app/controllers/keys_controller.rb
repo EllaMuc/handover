@@ -12,12 +12,11 @@ class KeysController < ApplicationController
     @key = Key.new
   end
 
-
   def create
-    @Key = Key.new(key_params)
-    @Key.property = Property.find(params[:property_id])
-    if @Key.save!
-      redirect_to properties_path
+    @key = Key.new(key_params)
+    @key.property = Property.find(params[:property_id])
+    if @key.save!
+      redirect_to property_keys_path
     else
       render :new
     end

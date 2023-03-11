@@ -1,0 +1,6 @@
+<div class="flex">
+    <% @property.keys.each do |k| %>
+    <p><%=link_to k.title, key_path(k), class:"btn btn-info" %></p>
+    <p><%= link_to "Delete", key_path(k), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%></p>
+  <% end %>
+  </div>
