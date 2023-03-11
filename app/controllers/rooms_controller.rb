@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
     @property = Property.find(params[:property_id])
 
     @room = Room.new
+    @room.property = @property
   end
 
   def index

@@ -1,37 +1,18 @@
  <div class="container">
-  <%= form_for @property do |f| %>
-      <div class="form-group">
-        <%= f.label :address %>
-        <%= f.text_field :address %>
+  <%= simple_form_for(@property) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="form-inputs">
+        <%= f.input :address %>
+        <%= f.input :city %>
+        <%= f.input :postcode %>
+        <%= f.input :move_in, as: :date %>
+        <%= f.input :move_out, as: :date %>
+        <%= f.input :visible, as: :boolean %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :city %>
-        <%= f.text_field :city %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :postcode %>
-        <%= f.number_field :postcode %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :move_in %>
-        <%= f.date_field :move_in %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :move_out %>
-        <%= f.date_field :move_out %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :visible %>
-        <%= f.check_box :visible %>
-      </div>
-
-      <div class="form-group">
-        <%= f.submit "Create Property", class: "btn btn-primary" %>
+      <div class="form-actions">
+        <%= f.button :submit, "Create Property", class: "btn btn-primary" %>
       </div>
     <% end %>
 </div>
