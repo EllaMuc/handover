@@ -25,4 +25,4 @@ class PropertiesController < ApplicationController
     end
 end
 
-#attempting to fix git hub
+
