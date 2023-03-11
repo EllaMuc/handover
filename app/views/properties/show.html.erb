@@ -1,1 +1,9 @@
+
+<h1>this is the show of the property</h1>
+
 <h1><%= @property.address %></h1>
+
+<%= link_to "room", new_property_room_path(@property), class: "btn btn-primary"%>
+<%= link_to "keys", property_keys_path(@property), class: "btn btn-secondary"%>
+<%= link_to "properties", properties_path  %>
+<%# <%= link_to "meter readings", new_property_meter_path, class: "btn btn-caution"%>

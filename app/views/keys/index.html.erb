@@ -10,11 +10,13 @@
   <tbody>
     <% @keys.each do |key| %>
       <tr>
-        <td><%= key.name %></td>
-        <td><%= key.code %></td>
+        <td><%= key.title %></td>
+        <td><%= key.description %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New Key", new_key_path %>
+<%= link_to "New Key", new_property_key_path %>
+

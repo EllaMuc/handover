@@ -1,9 +1,6 @@
-<h1>All Rooms</h1>
+<h1>Rooms index</h1>
 
-<% @rooms.each do |room| %>
-  <div>
-    <h2><%= room.name %></h2>
-    <p><%= room.description %></p>
-    <p><strong>Property:</strong> <%= room.property.name %></p>
-  </div>
-<% end %>
+ <% @rooms.each do |r| %>
+    <p><%=link_to r.name, room_path(r), class:"btn btn-info" %></p>
+    <p><%= link_to "Delete", @room, method: "destroy", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%></p>
+  <% end %>

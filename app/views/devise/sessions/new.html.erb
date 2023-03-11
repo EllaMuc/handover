@@ -5,41 +5,38 @@
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="https://uploads-ssl.webflow.com/623490033dffd3026b72e6bc/6250f4cc8308793f2d1c57a2_digital-handover-real-estate-construction.jpeg"
-                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" style="object-fit: cover; object-position: left;"/>
-                <%# class="rounded mx-auto d-block" class="w-100 vh-300" style="object-fit: cover; object-position: left" alt="Login form" /> %>
 
-            </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
+              <div class="d-flex align-items-end mb-3 pb-1" style="height: 30%;">
+                <span class="h1 fw-bold mb-0" class="text-center" style="margin-bottom: 50px;">Handover</span>
+              </div>
+                <img src="https://insight.rwabusiness.com/media/1827/istock-1132329631-handover_web.jpg?anchor=center&mode=crop&width=1140&height=550&rnd=132417041690000000"
+                alt="login form" class="rounded w-100 vh-300" style="margin-left: 20px; border-radius: 0.5rem 0.5rem 0.5rem 1rem;" style="object-fit: cover; object-position: left;"/>
+                        </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
 
-                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                  <div class="d-flex align-items-center mb-3 pb-1">
+                  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-                    <span class="h1 fw-bold mb-0">Handover</span>
-                  </div>
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                    <div class="form-outline mb-4">
+                      <%= f.input :email, required: true, input_html: {class: "form-control form-control-lg"} %>
+                    </div>
 
-                  <div class="form-outline mb-4">
-                    <%= f.input :email, required: true, input_html: {class: "form-control form-control-lg"} %>
-                  </div>
+                    <div class="form-outline mb-4">
+                      <%= f.input :password, required: true, input_html: {class: "form-control form-control-lg"} %>
+                    </div>
 
-                  <div class="form-outline mb-4">
-                    <%= f.input :password, required: true, input_html: {class: "form-control form-control-lg"} %>
-                  </div>
+                    <div class="pt-1 mb-4">
+                      <%= f.button :submit, "Login", class: "btn btn-dark btn-lg btn-block" %>
+                    </div>
 
-                  <div class="pt-1 mb-4">
-                    <%= f.button :submit, "Login", class: "btn btn-dark btn-lg btn-block" %>
-                  </div>
-
-                  <a class="small text-muted" href="#!">Forgot password?</a>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!"
-                      style="color: #393f81;">Sign up here</a></p>
-                  <a href="#!" class="small text-muted">Terms of use.</a>
-                  <a href="#!" class="small text-muted">Privacy policy</a>
-                <% end %>
-
+                    <a class="small text-muted" href="#!">Forgot password?</a>
+                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <%= link_to "Sign up here", new_user_registration_path %>
+                    <a href="#!" class="small text-muted">Terms of use.</a>
+                    <a href="#!" class="small text-muted">Privacy policy</a>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>

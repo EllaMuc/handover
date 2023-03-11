@@ -1,0 +1,17 @@
+<h1>All Rooms</h1>
+
+<div class="container">
+  <%= simple_form_for [@property, @room] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.button :submit %>
+  <% end %>
+  <%= link_to "property", property_path(@property), class: "btn btn-primary" %>
+
+  <div class="flex">
+    <% @property.rooms.each do |r| %>
+    <p><%=link_to r.name, room_path(r), class:"btn btn-info" %></p>
+    <p><%= link_to "Delete", room_path(r), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%></p>
+  <% end %>
+  </div>
+</div>

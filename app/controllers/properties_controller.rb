@@ -1,6 +1,7 @@
 class PropertiesController < ApplicationController
+
   def index
-    @properties = Property.all
+    @properties = Property.where(user: current_user)
   end
 
   def new
@@ -11,8 +12,12 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.visible = true
     @property.user = current_user
-    @property.save!
-    redirect_to property_path
+    if @property.save
+      redirect_to property_path(@property)
+    else
+      flash.now[:error] = "Please correct the following errors and try again."
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -20,7 +25,8 @@ class PropertiesController < ApplicationController
   end
 
   private
-    def property_params
-      params.require(:property).permit(:address, :city, :postcode, :move_in, :move_out, :visible)
-    end
+
+  def property_params
+    params.require(:property).permit(:address, :city, :postcode, :move_in, :move_out, :visible)
+  end
 end
