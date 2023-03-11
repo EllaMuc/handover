@@ -3,16 +3,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
 
   root to: "pages#home"
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-  resources :rooms, except: [:new, :create] do
-=======
   resources :rooms do
->>>>>>> 4d97319c43a7f9d726b78f6ac798ca5e3ae828ee
-=======
-  resources :rooms do
->>>>>>> 4d97319c43a7f9d726b78f6ac798ca5e3ae828ee
     resources :damages
   end
 
