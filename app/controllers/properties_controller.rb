@@ -12,7 +12,7 @@ class PropertiesController < ApplicationController
     @property.visible = true
     @property.user = current_user
     @property.save!
-    redirect_to property_path
+    redirect_to property_path(@property)
   end
 
   def show
