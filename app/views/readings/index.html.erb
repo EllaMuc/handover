@@ -1,26 +1,21 @@
-<h1>All Readings</h1>
+<h1>Readings</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Value</th>
-      <th>Date</th>
-      <th>Property</th>
-      <th colspan="3"></th>
+      <th>Name</th>
+      <th>Code</th>
     </tr>
   </thead>
   <tbody>
     <% @readings.each do |reading| %>
       <tr>
-        <td><%= reading.value %></td>
-        <td><%= reading.date %></td>
-        <td><%= reading.property.name %></td>
-        <td><%= link_to 'Show', reading %></td>
-        <td><%= link_to 'Edit', edit_reading_path(reading) %></td>
-        <td><%= link_to 'Delete', reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= reading.type_of_reading %></td>
+        <td><%= reading.result %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Reading', new_reading_path %>
+<%= link_to "New Reading", new_property_reading_path, class: "btn btn-primary" %>
+<%= link_to "Back to property", property_path(params[:property_id]), class: "btn btn-secondary" %>
