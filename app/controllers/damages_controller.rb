@@ -9,11 +9,11 @@ class DamagesController < ApplicationController
 
   def create
     @damage = Damage.new(damage_params)
-
-    if @damage.save
-      redirect_to @damage
+    @damage.room = Room.find(params[:room_id])
+    if @damage.save!
+      redirect_to room_damage_path(@damage.room, @damage)
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -24,6 +24,6 @@ class DamagesController < ApplicationController
   private
 
   def damage_params
-    params.require(:damage).permit(:description, :room_id)
+    params.require(:damage).permit(:description, :room_id, :photo)
   end
 end
