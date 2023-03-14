@@ -39,6 +39,25 @@
   </div>
 </div>
 
+ <div class="row my-3">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Readings</h5>
+        <% if @property.readings.any? %>
+          <ul>
+            <% @property.readings.each do |reading| %>
+              <li><%= reading.type_of_reading  %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>No Readings found.</p>
+        <% end %>
+        <%= link_to "Create Reading", new_property_reading_path(@property), class: "btn btn-primary mt-3" %>
+      </div>
+    </div>
+  </div>
+
 <div class="container">
   <div class="d-flex justify-content-center">
     <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
