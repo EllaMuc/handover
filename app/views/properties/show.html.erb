@@ -1,10 +1,48 @@
+<h1>Property Details</h1>
+<h2><%= @property.address %></h2>
 
-<h1>this is the show of the property</h1>
+<div class="row my-3">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Rooms</h5>
+        <% if @property.rooms.any? %>
+          <ul>
+            <% @property.rooms.each do |room| %>
+              <li><%= room.name %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>No rooms found.</p>
+        <% end %>
+        <%= link_to "Create Room", new_property_room_path(@property), class: "btn btn-primary mt-3" %>
+      </div>
+    </div>
+  </div>
 
-<h1><%= @property.address %></h1>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Keys</h5>
+        <% if @property.keys.any? %>
+          <ul>
+            <% @property.keys.each do |key| %>
+              <li><%= key.title %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>No keys found.</p>
+        <% end %>
+        <%= link_to "Create Key", new_property_key_path(@property), class: "btn btn-secondary mt-3" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to "room", new_property_room_path(@property), class: "btn btn-primary"%>
-<%= link_to "keys", property_keys_path(@property), class: "btn btn-secondary"%>
-<%= link_to "readings", property_readings_path(@property), class: "btn btn-secondary"%>
-<%= link_to "properties", properties_path  %>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
+  </div>
+</div>
+
 <%# <%= link_to "meter readings", new_property_meter_path, class: "btn btn-caution"%>
