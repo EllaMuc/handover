@@ -1,0 +1,16 @@
+<div id="signature-pad"></div>
+
+<%= form_tag('/pdf/generate_and_sign', method: 'post') do %>
+  <%= hidden_field_tag 'signature_data', '', id: 'signature-data' %>
+  <%= submit_tag 'Sign PDF' %>
+<% end %>
+
+<script src="https://unpkg.com/signature_pad"></script>
+<script>
+  var signaturePad = new SignaturePad(document.getElementById('signature-pad'));
+
+  $('form').submit(function(e) {
+    var signatureData = signaturePad.toDataURL();
+    $('#signature-data').val(signatureData.split(',')[1]);
+  });
+</script>
