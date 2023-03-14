@@ -11,14 +11,16 @@ class ReadingsController < ApplicationController
 
   def new
     # code to create a new reading
+    @property = Property.find(params[:property_id])
     @reading = Reading.new
   end
 
   def create
     # code to save a new reading
     @reading = Reading.new(reading_params)
-    if @reading.save
-      redirect_to @reading
+    @reading.property = Property.find(params[:property_id])
+    if @reading.save!
+      redirect_to property_readings_path
     else
       render :new
     end
@@ -31,7 +33,8 @@ class ReadingsController < ApplicationController
 
   def update
     # code to update a reading
-    @reading = Reading.find(params[:id])
+    @reading = Reading.find(params[:reading_id])
+    @reading.property = Property.find(params[:property_id])
     if @reading.update(reading_params)
       redirect_to @reading
     else
@@ -49,6 +52,6 @@ class ReadingsController < ApplicationController
   private
 
   def reading_params
-    params.require(:reading).permit(:value, :date, :property_id)
+    params.require(:reading).permit(:type_of_reading, :result)
   end
 end

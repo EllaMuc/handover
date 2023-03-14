@@ -1,0 +1,20 @@
+<h1>New Reading</h1>
+
+<%= form_with(model: [@property, @reading]) do |form| %>
+
+  <div>
+    <%= form.label :type_of_reading %>
+    <%= form.text_field :type_of_reading %>
+  </div>
+
+  <div>
+    <%= form.label :result %>
+    <%= form.text_field :result %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Reading" %>
+  </div>
+<% end %>
+
+<%= link_to "property", property_path(@property), class: "btn btn-primary" %>
