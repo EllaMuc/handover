@@ -77,5 +77,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+# Gemfile
+gem "cloudinary", '~> 1.12.0'
 
-gem "cloudinary" 
+gem "carrierwave"
