@@ -1,22 +1,28 @@
-<h1>Keys</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @keys.each do |key| %>
-      <tr>
-        <td><%= key.title %></td>
-        <td><%= key.description %></td>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to "New Key", new_property_key_path %>
-
+<div class="card">
+  <div class="card-header">
+    <h1>Keys</h1>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Code</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @keys.each do |key| %>
+          <tr>
+            <td><%= key.title %></td>
+            <td><%= key.description %></td>
+            <td><%= key.type_of_key %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer">
+    <%= link_to "New Key", new_property_key_path, class: "btn btn-primary" %>
+  </div>
+</div>
