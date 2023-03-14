@@ -14,6 +14,7 @@ class RoomsController < ApplicationController
 
   def show
     set_room
+    @damage = Damage.new
   end
 
   def create

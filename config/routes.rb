@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :rooms do
     resources :damages
+    resources :damages, only: [:new, :create]
   end
 
   resources :properties do
