@@ -9,7 +9,8 @@ class RoomsController < ApplicationController
   end
 
   def index
-    @rooms = Room.all
+    @property = Property.find(params[:property_id])
+    @rooms = @property.rooms
   end
 
   def show
@@ -19,13 +20,19 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    @room.property = Property.find(params[:property_id])
-    @room.save!
+    @property = Property.find(params[:property_id]) # Setze die `@property`-Variable
+    @room.property = @property # Verwende die `@property`-Variable, um die Beziehung zu erstellen
+    if @room.save
+      redirect_to room_path(@room) # Verwende die `@room`-Variable, um die Umleitung durchzuführen
+    else
+      render :new
+    end
   end
 
   def destroy
     @room = Room.find(params[:id])
     @room.destroy
+    redirect_to property_rooms_path(@room.property)
   end
 
   private

@@ -1,6 +1,7 @@
 class KeysController < ApplicationController
   def index
-    @keys = Key.all
+    @property = Property.find(params[:property_id])
+    @keys = @property.keys
   end
 
   def show
