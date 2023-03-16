@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   resources :properties do
     resources :keys
     resources :rooms, only: [:new, :create]
+    get "/posts", to: "posts#show"
+    get "/pdf", to: "posts#generate_pdf"
   end
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
