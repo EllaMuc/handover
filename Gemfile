@@ -44,6 +44,16 @@ gem "bootsnap", require: false
 
 gem "devise"
 
+#creating authorization through pundit
+gem "pundit"
+
+# Creates a pdf 
+gem 'wicked_pdf'
+
+# allows us to be abe to connect the pdf to our local machine
+gem 'wkhtmltopdf-binary', group: :development
+gem "wkhtmltopdf-heroku", group: :production
+
 # Use Sass to process CSS
 gem "sassc-rails"
 

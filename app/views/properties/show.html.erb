@@ -64,4 +64,9 @@
   </div>
 </div>
 
-<%# <%= link_to "meter readings", new_property_meter_path, class: "btn btn-caution"%>
+
+<%= link_to "room", new_property_room_path(@property), class: "btn btn-primary"%>
+<%= link_to "keys", property_keys_path(@property), class: "btn btn-secondary"%>
+<%= link_to "properties", properties_path  %>
+<div class="btn btn-secondary"><%= link_to "generate pdf", property_posts_path(@property, format: :pdf) %></div>
+<%# <%= link_to "PDF", property_post_path(post, format: :pdf) %>
