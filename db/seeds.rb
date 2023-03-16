@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+require "open-uri"
+
+file = URI.open("https://example.com/image.jpg")
+damage = Damage.new(description: "Some damage description")
+damage.photos.attach(io: file, filename: "image.jpg", content_type: ["image/jpeg", "image/jpg", "image/png"])
+damage.save

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :rooms do
     resources :damages
+    resources :damages, only: [:new, :create]
   end
 
   resources :properties do
@@ -16,7 +17,9 @@ Rails.application.routes.draw do
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  resources :properties do
+    resources :readings
+  end
   # Defines the root path route ("/")
   # root "articles#index"
 end

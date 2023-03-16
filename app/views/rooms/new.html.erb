@@ -6,7 +6,7 @@
       <%= f.input :description %>
       <%= f.button :submit %>
   <% end %>
-  <%= link_to "property", property_path(@property), class: "btn btn-primary" %>
+  <%= link_to "Go to property overview", property_path(@property), class: "btn btn-primary" %>
 
   <div class="flex">
     <% @property.rooms.each do |r| %>
