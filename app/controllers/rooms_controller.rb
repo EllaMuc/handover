@@ -20,12 +20,13 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     @room.property = Property.find(params[:property_id])
-    @room.save!
+    redirect_to new_property_room_path if @room.save!
   end
 
   def destroy
     @room = Room.find(params[:id])
-    @room.destroy
+    @property = @room.property
+    redirect_to new_property_room_path(@property) if @room.destroy!
   end
 
   private
