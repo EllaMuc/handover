@@ -7,11 +7,11 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import { Application } from "stimulus"
+// import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 import DamagePhotosController from "./damage_photos_controller"
 
-const application = Application.start()
+// const application = Application.start()
 const context = require.context(".", true, /\.js$/)
 application.load(definitionsFromContext(context))
 application.register("damage-photos", DamagePhotosController)
