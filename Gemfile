@@ -89,4 +89,3 @@ group :test do
 end
 # Gemfile
 gem "cloudinary"
-gem "dotenv-rails", groups: [:development, :test]
