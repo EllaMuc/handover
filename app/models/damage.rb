@@ -1,7 +1,7 @@
 class Damage < ApplicationRecord
   belongs_to :room
   validates :description, presence: true
-  has_many_attached :photos
+  has_one_attached :photo
 
   validate :photo_format
 
