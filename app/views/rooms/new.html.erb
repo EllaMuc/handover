@@ -1,5 +1,6 @@
 <h1>All Rooms</h1>
 
+
 <div class="container">
   <%= simple_form_for [@property, @room] do |f| %>
       <%= f.input :name %>
@@ -8,3 +9,4 @@
   <% end %>
   <%= link_to "Go to property overview", property_path(@property), class: "btn btn-primary" %>
   <%= link_to "All Rooms", property_rooms_path(@property), class: "btn btn-info" %>
+ </div>

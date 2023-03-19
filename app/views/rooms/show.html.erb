@@ -2,7 +2,6 @@
 
 
 <h1><%= @room.name %></h1>
-<p><%= link_to "Delete", @room, method: "destroy", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%></p>
 <% @room.damages.each do |damage| %>
   <%= cl_image_tag damage.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
