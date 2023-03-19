@@ -47,7 +47,7 @@ gem "devise"
 #creating authorization through pundit
 gem "pundit"
 
-# Creates a pdf 
+# Creates a pdf
 gem 'wicked_pdf'
 
 # allows us to be abe to connect the pdf to our local machine
@@ -88,6 +88,5 @@ group :test do
   gem "webdrivers"
 end
 # Gemfile
-gem "cloudinary", '~> 1.12.0'
-
-gem "carrierwave"
+gem "cloudinary"
+gem "dotenv-rails", groups: [:development, :test]
