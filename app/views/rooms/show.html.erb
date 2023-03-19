@@ -3,12 +3,15 @@
 
 <h1><%= @room.name %></h1>
 <% @room.damages.each do |damage| %>
-  <%= cl_image_tag damage.photo.key, height: 300, width: 400, crop: :fill %>
+  <% if damage.photo.attached? %>
+    <%= cl_image_tag damage.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end%>
 <% end %>
-<%= form_with model: [@room, @damage], data: { controller: "damage" } do |form| %>
-  <%= form.label :description %>
-  <%= form.text_area :description %>
-  <%= form.label :photo %>
-  <%= form.file_field :photo, data: { target: "damage.photoInput" } %>
-  <%= form.submit "Submit" %>
+
+<%= simple_form_for [@room, @damage] do |f| %>
+  <%= f.input :title, label: 'title'%>
+  <%= f.input :description, hint: 'description' %>
+  <%= f.input :photo, as: :file, data: { target: "damage.photoInput" }  %>
+  <%= f.button :submit %>
 <% end %>
+
