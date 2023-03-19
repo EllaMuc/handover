@@ -2,5 +2,4 @@
 
  <% @rooms.each do |r| %>
     <p><%=link_to r.name, room_path(r), class:"btn btn-info" %></p>
-    <p><%= link_to "Delete", @room, method: "destroy", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%></p>
   <% end %>
