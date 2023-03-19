@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :properties do
     resources :keys
-    resources :rooms, only: [:new, :create]
+    resources :rooms
     get "/posts", to: "posts#show"
     get "/pdf", to: "posts#generate_pdf"
   end
