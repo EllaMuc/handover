@@ -10,7 +10,7 @@
 
 <%= simple_form_for [@room, @damage] do |f| %>
   <%= f.input :title, label: 'title'%>
-  <%= f.input :description, hint: 'description' %>
+  <%= f.input :description, label: 'description' %>
   <%= f.input :photo, as: :file, data: { target: "damage.photoInput" }  %>
   <%= f.button :submit %>
 <% end %>
