@@ -3,7 +3,7 @@ class Damage < ApplicationRecord
   validates :description, presence: true
   has_one_attached :photo
 
-  validate :photo_format
+  # validate :photo_format
 
   private
 
