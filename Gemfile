@@ -88,15 +88,5 @@ group :test do
   gem "webdrivers"
 end
 # Gemfile
-<<<<<<< Updated upstream
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
-=======
-<<<<<<< Updated upstream
-gem "cloudinary", '~> 1.12.0'
-
-gem "carrierwave"
-=======
-gem "cloudinary"
->>>>>>> Stashed changes
->>>>>>> Stashed changes
