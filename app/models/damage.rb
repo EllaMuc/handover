@@ -8,10 +8,10 @@ class Damage < ApplicationRecord
   private
 
   def photo_format
-    if photos.attached?
-      photos.each do |photo|
+    if photo.attached?
+      photo.each do |photo|
         if !photo.content_type.in?(%('image/jpeg image/JPG image/png'))
-          errors.add(:photos, 'must be a PNG or JPG file')
+          errors.add(:photo, 'must be a PNG or JPG file')
         end
       end
     else
