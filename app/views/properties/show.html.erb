@@ -17,63 +17,63 @@
 </div>
 
 
-<div class="d-flex justify-content-around pt-3 ">
-  <div>
-    <div>
-      <div >
-        <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 15rem;">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Rooms</strong></h5>
-            <% if @property.rooms.any? %>
-              <ul>
-                <% @property.rooms.each do |room| %>
-                  <li><%= room.name %></li>
-                <% end %>
-              </ul>
-            <% else %>
-              <p>No rooms found.</p>
-            <% end %>
-            <%= link_to "Create Room", new_property_room_path(@property), class: "btn btn-primary mt-3" %>
-          </div>
-        </div>
-      </div>
 
-      <div class = "pt-3">
-        <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 15rem;">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Keys</strong></h5>
-            <% if @property.keys.any? %>
-              <ul>
-                <% @property.keys.each do |key| %>
-                  <li><%= key.title %></li>
-                <% end %>
-              </ul>
-            <% else %>
-              <p>No keys found.</p>
-            <% end %>
-            <%= link_to "Create Key", new_property_key_path(@property), class: "btn btn-secondary mt-3" %>
-          </div>
-        </div>
-      </div>
+<div class="d-flex justify-content-around pt-3">
+
+
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Rooms</strong></h5>
+      <% if @property.rooms.any? %>
+        <ul>
+          <% @property.rooms.each do |room| %>
+            <li><%= room.name %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No rooms found.</p>
+      <% end %>
+      <%= link_to "Create Room", new_property_room_path(@property), class: "btn btn-primary mt-3" %>
     </div>
-
-    <div>
-      <div class = "pt-3">
-        <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 15rem;">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Readings</strong></h5>
-            <% if @property.readings.any? %>
-              <ul>
-                <% @property.readings.each do |reading| %>
-                  <li><%= reading.type_of_reading  %></li>
-                <% end %>
-              </ul>
-            <% else %>
-              <p>No Readings found.</p>
-            <% end %>
-            <%= link_to "Create Reading", new_property_reading_path(@property), class: "btn btn-primary mt-3" %>
-          </div>
-        </div>
-      </div>
   </div>
+
+
+
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Keys</strong></h5>
+      <% if @property.keys.any? %>
+        <ul>
+          <% @property.keys.each do |key| %>
+            <li><%= key.title %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No keys found.</p>
+      <% end %>
+      <%= link_to "Create Key", new_property_key_path(@property), class: "btn btn-secondary mt-3" %>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Readings</strong></h5>
+      <% if @property.readings.any? %>
+        <ul>
+          <% @property.readings.each do |reading| %>
+            <li><%= reading.type_of_reading  %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No Readings found.</p>
+      <% end %>
+      <%= link_to "Create Reading", new_property_reading_path(@property), class: "btn btn-primary mt-3" %>
+    </div>
+  </div>
+
+
 </div>
