@@ -23,3 +23,45 @@
 .font-awesome-font {
   font-family: "Font Awesome 5 Free";
 }
+
+.propertyBackground{
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('modernist-decor-inspiration-01.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  z-index: 50;
+}
+
+.white-text{
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.half-and-half{
+  background:linear-gradient(to top, #FFFFFF 0%, #FFFFFF 37%, #222222 37%, #222222 100%);
+  margin: 0 auto;
+}
+
+.property-show{
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('modernist-decor-inspiration-08.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 50vh;
+
+}
+
+.back_grad_color{
+  background: linear-gradient(-180deg,rgba(175, 173, 173, 0.5) 0%,rgba(255,255,255,0.50) 100%);
+
+}
+
+.property-create{
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('abstract-blurred-property.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+
+}
