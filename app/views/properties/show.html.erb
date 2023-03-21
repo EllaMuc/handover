@@ -1,70 +1,79 @@
-<h1>Property Details</h1>
-<h2><%= @property.address %></h2>
-
-<div class="row my-3">
-  <div class="col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Rooms</h5>
-        <% if @property.rooms.any? %>
-          <ul>
-            <% @property.rooms.each do |room| %>
-              <li><%= room.name %></li>
-            <% end %>
-          </ul>
-        <% else %>
-          <p>No rooms found.</p>
-        <% end %>
-        <%= link_to "Create Room", new_property_room_path(@property), class: "btn btn-primary mt-3" %>
+<div class="back_grad_color">
+  <div>
+    <div class="property-show">
+      <div class="container pt-5">
+        <h1 class="white-text">Property Details</h1>
+        <h3 class="white-text"><%= @property.address %></h2>
+        <h3 class="white-text"><%= @property.city %></h2>
+        <h3 class="white-text"><%= @property.postcode %></h2>
       </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Keys</h5>
-        <% if @property.keys.any? %>
-          <ul>
-            <% @property.keys.each do |key| %>
-              <li><%= key.title %></li>
-            <% end %>
-          </ul>
-        <% else %>
-          <p>No keys found.</p>
-        <% end %>
-        <%= link_to "Create Key", new_property_key_path(@property), class: "btn btn-secondary mt-3" %>
+      <div class="container">
+      <div class="d-flex justify-content-center">
+        <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
+        <%= link_to "generate pdf", property_posts_path(@property, format: :pdf), class: "btn btn-secondary my-3 ml-2" %>
       </div>
     </div>
   </div>
 </div>
 
- <div class="row my-3">
-  <div class="col-md-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Readings</h5>
-        <% if @property.readings.any? %>
-          <ul>
-            <% @property.readings.each do |reading| %>
-              <li><%= reading.type_of_reading  %></li>
-            <% end %>
-          </ul>
-        <% else %>
-          <p>No Readings found.</p>
-        <% end %>
-        <%= link_to "Create Reading", new_property_reading_path(@property), class: "btn btn-primary mt-3" %>
-      </div>
+
+
+<div class="d-flex justify-content-around pt-3">
+
+
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Rooms</strong></h5>
+      <% if @property.rooms.any? %>
+        <ul>
+          <% @property.rooms.each do |room| %>
+            <li><%= room.name %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No rooms found.</p>
+      <% end %>
+      <%= link_to "Create Room", new_property_room_path(@property), class: "btn btn-primary mt-3" %>
     </div>
   </div>
 
-<div class="container">
-  <div class="d-flex justify-content-center">
-    <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
+
+
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Keys</strong></h5>
+      <% if @property.keys.any? %>
+        <ul>
+          <% @property.keys.each do |key| %>
+            <li><%= key.title %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No keys found.</p>
+      <% end %>
+      <%= link_to "Create Key", new_property_key_path(@property), class: "btn btn-secondary mt-3" %>
+    </div>
   </div>
+
+
+
+
+
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Readings</strong></h5>
+      <% if @property.readings.any? %>
+        <ul>
+          <% @property.readings.each do |reading| %>
+            <li><%= reading.type_of_reading  %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No Readings found.</p>
+      <% end %>
+      <%= link_to "Create Reading", new_property_reading_path(@property), class: "btn btn-primary mt-3" %>
+    </div>
+  </div>
+
+
 </div>
-
-
-
-
-<%= link_to "generate pdf", property_posts_path(@property, format: :pdf), class: "btn btn-secondary" %>
