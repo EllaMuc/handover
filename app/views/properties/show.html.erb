@@ -8,20 +8,15 @@
         <h3 class="white-text"><%= @property.postcode %></h2>
       </div>
       <div class="container">
-      <div class="d-flex justify-content-center">
         <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
         <%= link_to "generate pdf", property_posts_path(@property, format: :pdf), class: "btn btn-secondary my-3 ml-2" %>
-      </div>
     </div>
   </div>
 </div>
 
-
-
 <div class="d-flex justify-content-around pt-3">
 
-
-  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 15rem;">
     <div class="card-body">
       <h5 class="card-title"><strong>Rooms</strong></h5>
       <% if @property.rooms.any? %>
@@ -37,9 +32,7 @@
     </div>
   </div>
 
-
-
-  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 15rem;">
     <div class="card-body">
       <h5 class="card-title"><strong>Keys</strong></h5>
       <% if @property.keys.any? %>
@@ -54,12 +47,8 @@
       <%= link_to "Create Key", new_property_key_path(@property), class: "btn btn-secondary mt-3" %>
     </div>
   </div>
-
-
-
-
-
-  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 100%;">
+  
+  <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 15rem;">
     <div class="card-body">
       <h5 class="card-title"><strong>Readings</strong></h5>
       <% if @property.readings.any? %>
@@ -74,6 +63,5 @@
       <%= link_to "Create Reading", new_property_reading_path(@property), class: "btn btn-primary mt-3" %>
     </div>
   </div>
-
 
 </div>
