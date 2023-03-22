@@ -29,7 +29,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100vh;
+  height: 70vh;
   z-index: 50;
 }
 
@@ -79,8 +79,25 @@
 
 .cardbackground ul li{
   list-style-type: none;
+}
 
 .form-img{
   width: 70%;
 
+}
+
+.handoverKey{
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('handover_key.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+.meterReading{
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('meter_reading.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
 }

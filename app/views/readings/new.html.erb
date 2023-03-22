@@ -1,30 +1,32 @@
-<div class="container mt-5">
-  <div class="d-flex justify-content-between">
-    <div class="w-50 pr-5">
-      <div class="d-flex align-items-center">
-        <i class="fa-solid fa-arrow-left mr-2" onclick="history.back();"></i>
-        <h2>New Reading</h2>
-      </div>
-      <%= form_with(model: [@property, @reading]) do |form| %>
-        <div class="form-group">
-          <%= form.label :type_of_reading, class: "form-label" %>
-          <%= form.text_field :type_of_reading, class: "form-control form-control-lg", placeholder: "Enter type of reading" %>
-        </div>
-        <div class="form-group">
-          <%= form.label :result, class: "form-label" %>
-          <%= form.text_field :result, class: "form-control form-control-lg", placeholder: "Enter result" %>
-        </div>
+<div class="meterReading">
+  <div class="container pt-5" style="max-width: 500px;">
+    <div class="card-body mx-auto">
+      <div class="row">
+        <div class= "card card-signup p-3">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-arrow-left mr-2" onclick="history.back();"></i>
+              <h2>New Reading</h2>
+            </div>
+            <%= form_with(model: [@property, @reading]) do |form| %>
+              <div class="form-group">
+                <%= form.label :type_of_reading, class: "form-label" %>
+                <%= form.text_field :type_of_reading, class: "form-control form-control-lg", placeholder: "Enter type of reading" %>
+              </div>
+              <div class="form-group">
+                <%= form.label :result, class: "form-label" %>
+                <%= form.text_field :result, class: "form-control form-control-lg", placeholder: "Enter result" %>
+              </div>
+              <div>
+                <%= form.submit "Create Reading", class: "btn btn-primary btn-lg" %>
+                <a href="#"  type="submit" class="btn btn-primary btn-lg" onclick="document.querySelector('form').submit();">
+                  <i class="fa-regular fa-ruler-horizontal mr-1"></i>
+                  Create Reading
+                </a>
+              </div>
+            <% end %>
         <div>
-          <%= form.submit "Create Reading", class: "btn btn-primary btn-lg" %>
-          <a href="#"  type="submit" class="btn btn-primary btn-lg" onclick="document.querySelector('form').submit();">
-            <i class="fa-regular fa-ruler-horizontal mr-1"></i>
-            Create Reading
-          </a>
-        </div>
-      <% end %>
+      </div>
     </div>
-    <div class="img-cont w-50 pl-5">
-      <%= image_tag "reading.jpg", class: "form-img img-fluid" %>
-    </div>
+
   </div>
 </div>
