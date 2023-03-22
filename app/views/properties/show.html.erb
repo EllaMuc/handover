@@ -20,11 +20,15 @@
     <div class="card-body">
       <h5 class="card-title"><strong>Rooms</strong></h5>
       <% if @property.rooms.any? %>
-        <ul>
+        <ol>
           <% @property.rooms.each do |room| %>
-            <li><%= room.name %></li>
+
+            <li class="flex-container">
+            <div class="flex-item"><%= room.name %></div>
+            <div class="flex-item"><%= button_to "", property_room_path(@property, room), method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash" %></div>
+          </li>
           <% end %>
-        </ul>
+        </ol>
       <% else %>
         <p>No rooms found.</p>
       <% end %>
@@ -36,27 +40,34 @@
     <div class="card-body">
       <h5 class="card-title"><strong>Keys</strong></h5>
       <% if @property.keys.any? %>
-        <ul>
-          <% @property.keys.each do |key| %>
-            <li><%= key.title %></li>
-          <% end %>
-        </ul>
+        <ol>
+        <% @property.keys.each do |key| %>
+          <li class="flex-container">
+            <div class="flex-item"><%= key.title %></div>
+            <div class="flex-item"><%= button_to "", property_key_path(@property, key),
+            method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash" %></div>
+          </li>
+        <% end %>
+        </ol>
       <% else %>
         <p>No keys found.</p>
       <% end %>
       <%= link_to "Create Key", new_property_key_path(@property), class: "btn btn-secondary mt-3" %>
     </div>
   </div>
-  
+
   <div class="card shadow p-3 mb-5 bg-white rounded mx-2" style="width: 15rem;">
     <div class="card-body">
       <h5 class="card-title"><strong>Readings</strong></h5>
       <% if @property.readings.any? %>
-        <ul>
+        <ol>
           <% @property.readings.each do |reading| %>
-            <li><%= reading.type_of_reading  %></li>
+            <li class="flex-container">
+              <div class="flex-item"><%= reading.type_of_reading %></div>
+              <div class="flex-item"><%= button_to "", property_reading_path(@property, reading), method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash"  %></div>
+            </li>
           <% end %>
-        </ul>
+        </ol>
       <% else %>
         <p>No Readings found.</p>
       <% end %>
