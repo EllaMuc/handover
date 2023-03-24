@@ -15,7 +15,6 @@
   <h3>Rooms:</h3>
 
   <% @rooms.each do |room| %>
-    <h4>Insert image must change can be found on views/posts/show.html.erb</h4>
     <p><%= room.name %></p>
     <p><%= room.description %></p>
   <% end %>
@@ -29,5 +28,9 @@
   <% end %>
 
   <h3>Meter readings:</h3>
-  <h4>Will enter asap!!</h4>
+  <% @property.readings.each do |reading| %>
+    <h4>Insert image must change can be found on views/posts/show.html.erb</h4>
+    <p><%= reading.type_of_reading  %></p>
+    <p><%= reading.result %></p>
+  <% end %>
 </div>

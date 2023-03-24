@@ -12,8 +12,16 @@
               <%= f.input :address %>
               <%= f.input :city %>
               <%= f.input :postcode %>
-              <%= f.input :move_in, as: :date, include_blank: true %>
-              <%= f.input :move_out, as: :date, include_blank: true %>
+
+              <%= f.input :move_in, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
+
+              <%= f.input :move_out, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
             </div>
 
             <div class="form-actions">
