@@ -1,21 +1,32 @@
-<h1>Readings</h1>
+<div class="meterReading">
+  <div class="container pt-5" style="max-width: 500px;">
+    <div class="card-body mx-auto">
+      <div class="row">
+        <div class= "card card-signup p-3">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @readings.each do |reading| %>
-      <tr>
-        <td><%= reading.type_of_reading %></td>
-        <td><%= reading.result %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <h1>Readings</h1>
 
-<%= link_to "New Reading", new_property_reading_path, class: "btn btn-primary" %>
-<%= link_to "Back to property", property_path(params[:property_id]), class: "btn btn-secondary" %>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @readings.each do |reading| %>
+                <tr>
+                  <td><%= reading.type_of_reading %></td>
+                  <td><%= reading.result %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <%= link_to "New Reading", new_property_reading_path, class: "btn btn-primary" %>
+          <%= link_to "Back to property", property_path(params[:property_id]), class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
