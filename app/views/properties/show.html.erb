@@ -25,7 +25,7 @@
 
             <li class="flex-container">
             <div class="flex-item"><%= room.name %></div>
-            <div class="flex-item"><%= button_to "Delete", property_room_path(@property, room), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <div class="flex-item"><%= button_to "", property_room_path(@property, room), method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash" %></div>
           </li>
           <% end %>
         </ol>
@@ -44,7 +44,8 @@
         <% @property.keys.each do |key| %>
           <li class="flex-container">
             <div class="flex-item"><%= key.title %></div>
-            <div class="flex-item"><%= button_to "Delete", property_key_path(@property, key), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <div class="flex-item"><%= button_to "", property_key_path(@property, key),
+            method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash" %></div>
           </li>
         <% end %>
         </ol>
@@ -63,7 +64,7 @@
           <% @property.readings.each do |reading| %>
             <li class="flex-container">
               <div class="flex-item"><%= reading.type_of_reading %></div>
-              <div class="flex-item"><%= button_to "Delete", property_reading_path(@property, reading), method: :delete, data: { confirm: 'Are you sure?'}  %></div>
+              <div class="flex-item"><%= button_to "", property_reading_path(@property, reading), method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash"  %></div>
             </li>
           <% end %>
         </ol>
