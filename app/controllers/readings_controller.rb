@@ -46,7 +46,7 @@ class ReadingsController < ApplicationController
     # code to delete a reading
     @reading = Reading.find(params[:id])
     @reading.destroy
-    redirect_to readings_path
+    redirect_to property_reading_path
   end
 
   private
