@@ -1,0 +1,20 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.flex-item:first-child {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.flex-item:last-child {
+  margin-left: auto;
+  text-align: right;
+
+  /* den Delete-Button auf halbe Größe setzen */
+  button[type="submit"] {
+    transform: scale(0.5);
+    transform-origin: right;
+  }
+}
