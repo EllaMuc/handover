@@ -90,3 +90,7 @@ end
 # Gemfile
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
+
+gem 'docusign_esign'
+
+gem 'httparty'
