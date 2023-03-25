@@ -14,3 +14,12 @@
 @import "pages/background_image";
 @import "pages/contact";
 @import "pages/nav.scss";
+
+
+
+// Flatpicker
+@import "flatpickr/dist/flatpickr";
+@import "flatpickr/dist/themes/airbnb";
+
+@import "pages/show_properties";
+@import "pages/icon";

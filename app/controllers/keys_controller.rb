@@ -39,7 +39,7 @@ class KeysController < ApplicationController
   def destroy
     @key = Key.find(params[:id])
     @key.destroy
-    redirect_to keys_path
+    redirect_to property_path
   end
 
   private

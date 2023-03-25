@@ -1,29 +1,45 @@
-<div class="card">
-  <div class="card-header">
-    <h1>Keys</h1>
-  </div>
-  <div class="card-body">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Code</th>
-          <th>Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @keys.each do |key| %>
-          <tr>
-            <td><%= key.title %></td>
-            <td><%= key.description %></td>
-            <td><%= key.type_of_key %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-  <div class="card-footer">
-    <%= link_to "New Key", new_property_key_path, class: "btn btn-primary" %>
-    <%= link_to "Back to Property Overview", property_path(@property), class: "btn btn-secondary" %>
+<div class="handoverKey">
+  <div class="ms-5 pt-5" style="max-width: 500px;" >
+    <article class="card-body mx-auto">
+      <div class="row">
+        <div class= "card crad-signup p-3">
+
+
+          <div class="card-header">
+          <div class="d-flex align-items-center">
+          <i class="fa-solid fa-square-caret-left mr-2" onclick="history.go(-3);"></i>
+            <h1>Keys</h1>
+           </div>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Number</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @keys.each do |key| %>
+                  <tr>
+                    <td><%= key.title %></td>
+                    <td><%= key.description %></td>
+                    <td><%= key.type_of_key %></td>
+                    <td><%= button_to "", property_key_path(@property, key),
+                      method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash" %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+            <div class="card-footer">
+              <%= link_to "New Key", new_property_key_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
   </div>
 </div>

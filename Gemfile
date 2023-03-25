@@ -96,3 +96,5 @@ gem 'docusign_esign'
 gem 'httparty'
 
 gem 'letter_opener', group: :development
+
+gem 'bootstrap-datepicker-rails'
