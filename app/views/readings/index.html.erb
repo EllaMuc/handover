@@ -1,32 +1,40 @@
 <div class="meterReading">
-  <div class="container pt-5" style="max-width: 500px;">
-    <div class="card-body mx-auto">
+  <div class="ms-5 pt-5" style="max-width: 500px;">
+    <article class="card-body mx-auto">
       <div class="row">
-        <div class= "card card-signup p-3">
-
-          <h1>Readings</h1>
-
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Code</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @readings.each do |reading| %>
+        <div class="card card-signup p-3">
+          <div class="card-header">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-square-caret-left mr-2" onclick="history.go(-3);"></i>
+              <h1>Readings</h1>
+            </div>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
                 <tr>
-                  <td><%= reading.type_of_reading %></td>
-                  <td><%= reading.result %></td>
+                  <th>Type</th>
+                  <th>Meter index</th>
+                  <th></th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-
-          <%= link_to "New Reading", new_property_reading_path, class: "btn btn-primary" %>
-          <%= link_to "Back to property", property_path(params[:property_id]), class: "btn btn-secondary" %>
+              </thead>
+              <tbody>
+                <% @readings.each do |reading| %>
+                  <tr>
+                    <td><%= reading.type_of_reading %></td>
+                    <td><%= reading.result %></td>
+                    <td><%= button_to "", property_reading_path(@property, reading),
+                      method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash" %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <%= link_to "New Reading", new_property_reading_path, class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </div>
