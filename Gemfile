@@ -87,8 +87,13 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-# Gemfile
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
+
+gem 'docusign_esign'
+
+gem 'httparty'
+
+gem 'letter_opener', group: :development
 
 gem 'bootstrap-datepicker-rails'

@@ -110,6 +110,11 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    docusign_esign (3.22.0)
+      addressable (~> 2.7, >= 2.7.0)
+      json (~> 2.1, >= 2.1.0)
+      jwt (~> 2.2, >= 2.2.1)
+      typhoeus (~> 1.0, >= 1.0.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
@@ -117,6 +122,8 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
+    ethon (0.16.0)
+      ffi (>= 1.15.0)
     execjs (2.8.1)
     ffi (1.15.5)
     font-awesome-sass (6.3.0)
@@ -126,6 +133,9 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -136,6 +146,12 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
+    json (2.6.3)
+    jwt (2.7.0)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -153,6 +169,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.18.0)
     msgpack (1.6.1)
+    multi_xml (0.6.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -249,6 +266,8 @@ GEM
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -290,10 +309,13 @@ DEPENDENCIES
   cloudinary
   debug
   devise
+  docusign_esign
   dotenv-rails
   font-awesome-sass (~> 6.1)
+  httparty
   jbuilder
   jsbundling-rails
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   pundit
