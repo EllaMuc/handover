@@ -1,7 +1,8 @@
 class ReadingsController < ApplicationController
   def index
     # code to retrieve all readings
-    @readings = Reading.all
+    @property = Property.find(params[:property_id])
+    @readings = @property.readings
   end
 
   def show

@@ -9,20 +9,35 @@
           <h3 class="white-text"><%= @property.postcode %></h2>
         </div>
         <p>To create a pdf and complete the Inventory process please do the following</p>
-        <ol>
-          <li>click on the create room/meter readings/keys</li>
-          <li>complete title and description</li>
-          <li>upload picture and description</li>
-          <li>once all three are completed click generate pdf and send it to the other desired party</li>
-        </ol>
-        <div class="container">
-          <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
-          <%= link_to "generate pdf", property_posts_path(@property, format: :pdf), class: "btn btn-secondary my-3 ml-2" %>
+        <% if @property.rooms.empty? && @property.keys.empty? && @property.readings.empty?%>
+            <ol>
+            <li style="color: red;">click on the create room/meter readings/keys</li>
+            <li style="color: red;">complete title and description</li>
+            <li style="color: red;">upload picture and description</li>
+            <li style="color: red;">once all three are completed click generate pdf and send it to the other desired party</li>
+          </ol>
+          <div class="container">
+            <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
+
+              <% else %>
+              <ol>
+            <li>click on the create room/meter readings/keys</li>
+            <li>complete title and description</li>
+            <li>upload picture and description</li>
+            <li>once all three are completed click generate pdf and send it to the other desired party</li>
+          </ol>
+          <div class="container">
+            <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
+
+              <%= link_to "generate pdf", property_posts_path(@property, format: :pdf), class: "btn btn-secondary my-3 ml-2" %>
+
+
+          <% end %>
         </div>
       </div>
 
 
-    <div>
+    <div class="pt-4">
       <div class="card shadow p-3 mb-5 bg-white rounded mx-2 cardbackground" style="width: 100%">
         <div class="card-body">
           <h5 class="card-title"><strong>Rooms</strong></h5>
@@ -62,7 +77,7 @@
         </div>
       </div>
 
-      <div class="card shadow p-3 mb-5 bg-white rounded mx-2 cardbackground" style="width: 100%">
+      <div class="card shadow p-3 mb-5 bg-white rounded mx-2 meterReading_cardStyle" style="width: 100%">
         <div class="card-body">
           <h5 class="card-title"><strong>Readings</strong></h5>
           <% if @property.readings.any? %>
@@ -73,7 +88,7 @@
               <div class="flex-item"><%= button_to "", property_reading_path(@property, reading), method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash"  %></div>
             </li>
               <% end %>
-            <ul>
+            </ul>
           <% else %>
             <p>No Readings found.</p>
           <% end %>
