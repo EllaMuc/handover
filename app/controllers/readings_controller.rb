@@ -3,6 +3,8 @@ class ReadingsController < ApplicationController
     # code to retrieve all readings
     @property = Property.find(params[:property_id])
     @readings = @property.readings
+
+
   end
 
   def show
