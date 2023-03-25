@@ -3,6 +3,23 @@ class ApplicationController < ActionController::Base
     properties_path
   end
 
+  # def initialize(session, request, status)
+  #   @envelope_args = {
+  #     signer_email: request.params['signerEmail'].gsub(/([^\w \-\@\.\,])+/, ''),
+  #     signer_name: request.params['signerName'].gsub(/([^\w \-\@\.\,])+/, ''),
+  #     cc_email: request.params['ccEmail'].gsub(/([^\w \-\@\.\,])+/, ''),
+  #     cc_name: request.params['ccName'].gsub(/([^\w \-\@\.\,])+/, ''),
+  #     status: status
+    #}
+  #   @args = {
+  #     account_id: session['ds_account_id'],
+  #     base_path: session['ds_base_path'],
+  #     access_token: session['ds_access_token'],
+  #     envelope_args: @envelope_args
+  #   }
+  # end
+
+
   def create_envelope_api(args)
     # Obtain your OAuth token
     # Step 2 start

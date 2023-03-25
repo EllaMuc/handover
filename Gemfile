@@ -94,3 +94,5 @@ gem "dotenv-rails", groups: [:development, :test]
 gem 'docusign_esign'
 
 gem 'httparty'
+
+gem 'letter_opener', group: :development
