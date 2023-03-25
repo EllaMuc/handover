@@ -31,6 +31,7 @@
               <% @property.rooms.each do |room| %>
                 <li class="flex-container">
             <div class="flex-item"><%= room.name %></div>
+            <%= link_to "", property_rooms_path(@property), class: "fa-solid fa-circle-info icon-color" %>
             <div class="flex-item"><%= button_to "", property_room_path(@property, room), method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash trash-icon" %></div>
           </li>
               <% end %>
@@ -50,6 +51,7 @@
               <% @property.keys.each do |key| %>
                 <li class="flex-container">
             <div class="flex-item"><%= key.title %></div>
+            <%= link_to "", property_keys_path(@property), class: "fa-solid fa-circle-info icon-color" %>
             <div class="flex-item"><%= button_to "", property_key_path(@property, key),
             method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash trash-icon" %></div>
           </li>
@@ -70,6 +72,7 @@
               <% @property.readings.each do |reading| %>
                  <li class="flex-container">
               <div class="flex-item"><%= reading.type_of_reading %></div>
+              <%= link_to "", property_readings_path(@property), class: "fa-solid fa-circle-info icon-color" %>
               <div class="flex-item"><%= button_to "", property_reading_path(@property, reading), method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash trash-icon"  %></div>
             </li>
               <% end %>
