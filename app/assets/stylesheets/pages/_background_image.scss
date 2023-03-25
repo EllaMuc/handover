@@ -29,8 +29,16 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 70vh;
+  height: 80vh;
   z-index: 50;
+}
+
+.belAir{
+  background: linear-gradient(to top, #fff1eb 0%, #c3dfe0 100%);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('the_bel_air_house.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 68px;
 }
 
 .white-text{

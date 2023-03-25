@@ -9,14 +9,17 @@
             <%= f.error_notification %>
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
             <div class="form-inputs">
-              <%= f.input :address %>
+              <%= f.input :street %>
               <%= f.input :city %>
               <%= f.input :postcode %>
 
               <%= f.input :move_in, as: :string,
                 wrapper_html: { class: "mb-4" },
                 label_html: { class: "form-label text-secondary fw-bold" },
-                input_html: { data: { controller: "flatpickr" } } %>
+                input_html: { data: { controller: "flatpickr" } },
+                enableTime: false,
+                dateFormat: "Y-m-d"
+                %>
 
               <%= f.input :move_out, as: :string,
                 wrapper_html: { class: "mb-4" },
@@ -25,7 +28,7 @@
             </div>
 
             <div class="form-actions">
-              <%= f.button :submit, "Create Property", class: "btn btn-primary" %>
+              <%= f.button :submit, "Create Property", class: "btn btn-outline-dark" %>
             </div>
           <% end %>
         </div>
