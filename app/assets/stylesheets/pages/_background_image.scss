@@ -49,9 +49,7 @@
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('modernist-decor-inspiration-08.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  height: 100vh;
-
+  padding-top: 68px;
 }
 
 .back_grad_color p {
@@ -100,4 +98,13 @@
   background-repeat: no-repeat;
   background-position: center center;
   height: 100vh;
+}
+
+
+.meterReading_cardStyle{
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('meter_reading.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 30vh;
 }
