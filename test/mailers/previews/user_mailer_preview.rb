@@ -6,4 +6,6 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.welcome
   end
 
+
+
 end
