@@ -112,10 +112,18 @@
 }
 
 
-.meterReading_cardStyle{
+.meterReading_cardStyle {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('meter_reading.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 30vh;
+}
+.damageImage {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('damage_background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 50px;
+  height: fit-content;
 }
