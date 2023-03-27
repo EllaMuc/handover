@@ -7,30 +7,54 @@
 <div class="container mb-6">
   <div class="row  mt-4 ">
     <div class="col-md-7">
-    <body class="p-3 m-0 border-0 bd-example">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Create your damages</h5>
-          <p class="card-text">Give a discription for your damages and upload your photo.</p>
-        </div>
-    </div>
-  </body>
+
+
       <div class="">
-        <% @room.damages.each do |damage| %>
-          <% if damage.photo.attached? %>
-          <div class="card" style="width: 18rem;">
-            <%= cl_image_tag damage.photo.key, height: 150, style: "width: 100%", crop: :fill, class:"mr-1" %>
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
+      <div id="carouselExampleCaptions" class="carousel slide w-50 mt-4" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <% @room.damages.each do |damage| %>
+      <% if damage.photo.attached? %>
+        <div class="carousel-item active">
+        <%= cl_image_tag damage.photo.key, height: 150, style: "width: 100%;", crop: :fill, class:"d-block w-100 dark-image" %>
+          <div class="carousel-caption d-none d-md-block">
+            <p class="card-title text-white"><%= damage.title  %></p>
+              <p class="card-text text-white"><%= damage.description %></p>
           </div>
-        <% end%>
+        </div>
       <% end %>
-      </div>
-    </div>
+    <% end %>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  </div>
+  </div>
+</div>
+
+
+
+
+
     <div class="col-md-5 mx-auto">
       <h1><%= @room.name.capitalize %></h1>
-
+      <div class="card">
+        <h5 class="card-header">Create your demages</h5>
+        <div class="card-body">
+          <h5 class="card-title">Give the name of the title</h5>
+          <p class="card-text">Make sure you give detailed description for your demages and upload the photo of your demages</p>
+        </div>
+      </div>
       <%= simple_form_for [@room, @damage] do |f| %>
       <div class="">
         <%= f.input :title, label: 'Title', class: "col-md-1 mx-auto bg-primary p-3" %>
@@ -41,8 +65,8 @@
       <div class="">
         <%= f.input :photo, as: :file, data: { target: "damage.photoInput" }  %>
         </div>
-        <div type="button" class="btn btn-primary"></button>
-          <%= f.button :submit %>
+        <div type="button" class="btn btn-dark">
+          <%= f.button :submit, class: "text-white" %>
         </div>
       <% end %>
     </div>

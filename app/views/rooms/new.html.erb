@@ -3,10 +3,10 @@
 
 <section class="vh-100 bg-image position-relative" style="background-image:url('http://cdn.home-designing.com/wp-content/uploads/2014/07/three-bedroom-apartment-layout.jpeg');">
 <div class="position-absolute opacity-50 bg-dark" style="width: 100vw; height: 100vh"></div>
-  <div class="bg-light p-5 position-absolute z-1 start-50 top-50 translate-middle" style="width:min(50%, 500px)">
+  <div class="bg-light  p-5 position-absolute z-1 start-50 top-50 translate-middle" style="width:min(50%, 500px)">
 
                 <h2>All Rooms</h2>
-    
+
                 <%= simple_form_for [@property, @room], data: { insert_in_list_target: "form", action: "submit->in-list"} do |f| %>
                   <div class="form-outline mb-5">
                     <%= f.input :name, input_html: { class: "form-control form-control-lg" } %>
