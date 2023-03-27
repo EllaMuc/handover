@@ -8,30 +8,41 @@
 </div>
 <div class="half-and-half">
   <div class="container half-and-half">
-    <div class="row">
+    <div class="row pt-5">
       <% @properties.each do |property| %>
-        <div class="col-md-4 mb-3 pt-5">
-          <div class="card shadow p-3 mb-5 bg-white rounded cardbackground">
-            <div class="card-body d-flex flex-column justify-content-between" style="height: 230px;">
-              <div>
-                <h5 class="card-title"><%= property.address %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= property.city %>, <%= property.postcode %></h6>
-                <p class="card-text">
-                  <% if property.move_in.present? %>
-                    Move-in: <%= property.move_in %><br>
-                  <% end %>
-                  <% if property.move_out.present? %>
-                    Move-out: <%= property.move_out %><br>
-                  <% end %>
-                  Visible: <%= property.visible %>
+        <%= link_to property_path(property), class:"col-sm-12 col-md-6 col-lg-4 mb-4" do %>
+          <div class="card card2 card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt=<%=property.street %>>
+            <div class="card-img-overlay d-flex flex-column">
+              <div class="card-body">
+                <small class="card-meta mb-2">Easy Handover</small>
+                <br>
+                <h5 class="card-title white-text"><%= property.street %></h5>
+                <br>
+                <h6 class="card-subtitle mb-2 white-text">
+                  <%= property.city %>
+                </h6>
+                <br>
+                <h6 class="card-subtitle mb-2 white-text">
+                  <%= property.postcode %>
+                </h6>
+                <p class="card-text white-text">
+                  <small>
+                    <i class="far fa-clock"></i>
+                    <% if property.move_in.present? %>
+                      Move-in: <%= property.move_in %><br>
+                    <% end %>
+                    <% if property.move_out.present? %>
+                      Move-out: <%= property.move_out %><br>
+                    <% end %>
+                  </small>
                 </p>
               </div>
-              <div class="mt-2">
-                <%= link_to "Details", property_path(property), class: "btn btn-primary" %>
-              </div>
             </div>
-          </div>
         </div>
+        <% end %>
+
+
       <% end %>
     </div>
 
