@@ -2,7 +2,10 @@
 <section class="vh-100 bg-image position-relative" style="background-image:url('http://cdn.home-designing.com/wp-content/uploads/2014/07/three-bedroom-apartment-layout.jpeg');">
   <div class="position-absolute opacity-50 bg-dark" style="width: 100vw; height: 100vh"></div>
     <div class="bg-light p-5 position-absolute z-1 start-50 top-50 translate-middle" style="width:min(50%, 500px)">
-      <h2>All Rooms</h2>
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-square-caret-left mr-2" onclick="history.back();"></i>
+                <h2>All Rooms</h2>
+        </div>
         <%= simple_form_for [@property, @room], data: { insert_in_list_target: "form", action: "submit->in-list"} do |f| %>
           <div class="form-outline mb-5">
             <%= f.input :name, input_html: { class: "form-control form-control-lg" } %>
@@ -16,12 +19,12 @@
           <div class="d-flex justify-content-between list" data-insert-in-list-target="items">
             <% @property.rooms.each do |r| %>
               <p><%= link_to r.name, room_path(r), class:"btn btn-info" %></p>
-              <p><%= link_to "Delete", room_path(r), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%></p>
+              <p><%= link_to room_path(r), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger" do %>
+            <i class="fas fa-trash"></i>
+            <% end %>
+              </p>
            <% end %>
          </div>
-         <%= button_to property_path(@property), method: :get, class: "btn btn-primary btn btn-dark" do %>
-            Go to property overview
-          <% end %>
     </div>
   </div>
 </section>
