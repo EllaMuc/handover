@@ -85,6 +85,10 @@ GEM
       msgpack (~> 1.2)
     bootstrap-datepicker-rails (1.9.0.1)
       railties (>= 3.0)
+    bootstrap (5.2.3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.6, < 3)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -189,6 +193,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.6)
+    popper_js (2.11.6)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -305,6 +310,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap-datepicker-rails
+  bootstrap (~> 5.2.3)
   capybara
   cloudinary
   debug
