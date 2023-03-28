@@ -69,6 +69,17 @@
 
 }
 
+.damageImage{
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('damage_background');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+
+}
+
+.dark-image{
+  filter: brightness(70%);
+}
 
 .cardbackground{
   background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, #c3dfe0 15.9%, #bcd979 15.9%, #9dad6f 24.4%, #7d6d61 24.5%, #5e574d 66%);
@@ -101,10 +112,18 @@
 }
 
 
-.meterReading_cardStyle{
+.meterReading_cardStyle {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('meter_reading.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 30vh;
+}
+.damageImage {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('damage_background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 50px;
+  height: fit-content;
 }
