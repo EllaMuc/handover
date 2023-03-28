@@ -69,13 +69,13 @@
 
 }
 
-.damageImage{
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('damage_background');
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 100vh;
+// .damageImage{
+//   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('damage_background');
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   height: 100vh;
 
-}
+// }
 
 .dark-image{
   filter: brightness(70%);
@@ -134,4 +134,5 @@
 
 .carousel-margin {
   margin-top: 55px;
+
 }
