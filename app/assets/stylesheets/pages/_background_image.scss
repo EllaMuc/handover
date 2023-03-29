@@ -21,7 +21,7 @@
 }
 
 .font-awesome-font {
-  font-family: "Font Awesome 5 Free";
+ /* font-family: "Font Awesome 5 Free"; */
 }
 
 .propertyBackground{
@@ -76,7 +76,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100vh;
+  //min-height: max-content;
+  padding-bottom: 15vh;
 
 }
 
@@ -219,7 +220,7 @@ background: linear-gradient(0deg, rgba(35,79,109,0.3785889355742297) 0%, rgba(69
 }
 }
 
-.card3{
+.card3 {
     height: 250px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     background-size: cover !important;
@@ -227,6 +228,8 @@ background: linear-gradient(0deg, rgba(35,79,109,0.3785889355742297) 0%, rgba(69
     position: relative;
     border-radius: 5px;
     margin-bottom: 20px;
+
+}
 
 
 
@@ -247,4 +250,3 @@ background: linear-gradient(0deg, rgba(35,79,109,0.3785889355742297) 0%, rgba(69
   margin-top: 55px;
 
 }
-
