@@ -11,5 +11,12 @@
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 0.25rem;
   color: white;
-  text-shadow: 1px 4px rgba(0,0,0,0.6);
+}
+
+.black_icon{
+  color: #000000;
+}
+
+.black_icon:hover{
+  color: grey;
 }

@@ -41,18 +41,17 @@
             <div class="col-md-5 mx-auto">
               <h1><%= @room.name.capitalize %></h1>
             <div class="card">
-              <h4 class="card-header">Create your demages</h4>
+              <h4 class="card-header">Create your damages</h4>
               <div class="card-body">
-                <h5 class="card-title">Give the name of the title</h5>
-                <p class="card-text">Make sure you give detailed description for your demages and upload the photo of your demages</p>
+                <p class="card-text">Please complete the form and upload a picture</p>
               </div>
             </div>
               <%= simple_form_for [@room, @damage] do |f| %>
                 <div class="">
-                  <%= f.input :title, label: 'Title', class: "col-md-1 mx-auto bg-primary p-3" %>
+                  <%= f.input :title, label: 'Title', class: "col-md-1 mx-auto bg-primary p-3", placeholder: "Don't forget to add the title" %>
                 </div>
                 <div class="">
-                  <%= f.input :description, label: 'Description' %>
+                  <%= f.input :description, label: 'Description', placeholder: "Please enter a description of the damaged goods" %>
                 </div>
                 <div class="">
                   <%= f.input :photo, as: :file, data: { target: "damage.photoInput" }  %>

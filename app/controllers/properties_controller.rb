@@ -1,5 +1,4 @@
 class PropertiesController < ApplicationController
-
   def index
     @properties = Property.where(user: current_user)
   end
@@ -22,7 +21,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
-    user = User.first
+    @user = User.first
     UserMailer.welcome.deliver_now
   end
 
