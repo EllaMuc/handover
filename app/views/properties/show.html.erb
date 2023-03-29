@@ -1,44 +1,31 @@
 <div class="back_grad_color">
 
-    <div class="d-flex  justify-content-around">
+    <div class="d-flex row">
       <div>
         <div class="container pt-5">
           <h1 class="white-text">Property Details</h1>
-          <h3 class="white-text"><%= @property.address %></h2>
+          <h3 class="white-text"><%= @property.street %></h2>
           <h3 class="white-text"><%= @property.city %></h2>
           <h3 class="white-text"><%= @property.postcode %></h2>
         </div>
-        <p>To create a pdf and complete the Inventory process please do the following</p>
-        <% if @property.rooms.empty? && @property.keys.empty? && @property.readings.empty?%>
-            <ol>
-            <li style="color: red;">click on the create room/meter readings/keys</li>
-            <li style="color: red;">complete title and description</li>
-            <li style="color: red;">upload picture and description</li>
-            <li style="color: red;">once all three are completed click generate pdf and send it to the other desired party</li>
-          </ol>
-          <div class="container">
-            <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
-
-              <% else %>
-              <ol>
+        <div class="container">
+          <p>To create a pdf and complete the Inventory process please do the following</p>
+          <ol>
             <li>click on the create room/meter readings/keys</li>
             <li>complete title and description</li>
             <li>upload picture and description</li>
             <li>once all three are completed click generate pdf and send it to the other desired party</li>
           </ol>
-          <div class="container">
-            <%= link_to "Go back to Properties", properties_path, class: "btn btn-warning my-3" %>
-
-              <%= link_to "generate pdf", property_posts_path(@property, format: :pdf), class: "btn btn-secondary my-3 ml-2" %>
-
-
-          <% end %>
+        </div>
+        <div class="container">
+          <%= link_to "Go back to Properties", properties_path, class: "btn btn-secondary" %>
+          <%= link_to "generate pdf", property_posts_path(@property, format: :pdf), class: "btn btn-success" %>
         </div>
       </div>
 
 
-    <div class="pt-4">
-      <div class="card shadow p-3 mb-5 bg-white rounded mx-2 cardbackground" style="width: 100%">
+    <div class="pt-4 d-flex justify-content-around">
+      <div class="property_card card3 shadow p-3 mb-5 rounded mx-2 cardbackground1" style="width:25%">
         <div class="card-body">
           <h5 class="card-title"><strong>Rooms</strong></h5>
           <% if @property.rooms.any? %>
@@ -54,11 +41,11 @@
           <% else %>
             <p>No rooms found.</p>
           <% end %>
-          <%= link_to content_tag(:i, "", class: "fa-solid fa-house mr-2") + "Create Room", new_property_room_path(@property), class: "btn btn-primary mt-3" %>
+          <%= link_to content_tag(:i, "", class: "fa-solid fa-house mr-2") + "Create Room", new_property_room_path(@property), class: "btn btn-outline-light mt-3" %>
         </div>
       </div>
 
-      <div class="card shadow p-3 mb-5 bg-white rounded mx-2 cardbackground" style="width: 100%">
+      <div class="property_card shadow p-3 mb-5 rounded mx-2 cardbackground2" style="width: 25%">
         <div class="card-body">
           <h5 class="card-title"><strong>Keys</strong></h5>
           <% if @property.keys.any? %>
@@ -75,27 +62,27 @@
           <% else %>
             <p>No keys found.</p>
           <% end %>
-          <%= link_to content_tag(:i, "", class: "fas fa-key mr-2") + "Create Key", new_property_key_path(@property), class: "btn btn-secondary mt-3" %>
+          <%= link_to content_tag(:i, "", class: "fas fa-key mr-2") + "Create Key", new_property_key_path(@property), class: "btn btn-outline-light mt-3" %>
         </div>
       </div>
 
-      <div class="card shadow p-3 mb-5 bg-white rounded mx-2 meterReading_cardStyle" style="width: 100%">
+      <div class="property_card shadow p-3 mb-5 rounded mx-2 meterReading_cardStyle" style="width: 25%">
         <div class="card-body">
           <h5 class="card-title"><strong>Readings</strong></h5>
           <% if @property.readings.any? %>
             <ul>
               <% @property.readings.each do |reading| %>
                  <li class="flex-container">
-              <div class="flex-item"><%= reading.type_of_reading %></div>
-              <%= link_to "", property_readings_path(@property), class: "fa-solid fa-circle-info icon-color" %>
-              <div class="flex-item"><%= button_to "", property_reading_path(@property, reading), method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash trash-icon"  %></div>
-            </li>
+                    <div class="flex-item"><%= reading.type_of_reading %></div>
+                    <%= link_to "", property_readings_path(@property), class: "fa-solid fa-circle-info icon-color" %>
+                    <div class="flex-item"><%= button_to "", property_reading_path(@property, reading), method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash trash-icon"  %></div>
+                </li>
               <% end %>
             </ul>
           <% else %>
             <p>No Readings found.</p>
           <% end %>
-          <%= link_to content_tag(:i, "", class: "fa-solid fa-ruler mr-2") + "Create Reading", new_property_reading_path(@property), class: "btn btn-primary mt-3" %>
+          <%= link_to content_tag(:i, "", class: "fa-solid fa-ruler mr-2") + "Create Reading", new_property_reading_path(@property), class: "btn btn-outline-light mt-3" %>
         </div>
       </div>
 

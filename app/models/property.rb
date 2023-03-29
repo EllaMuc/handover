@@ -4,6 +4,8 @@ class Property < ApplicationRecord
   has_many :keys
   has_many :readings
   validates :city, presence: true
+  validates :street, presence: true
+  validates :postcode, presence: true
   validates :move_in, presence: true, if: :move_out?
   validates :move_out, presence: true, if: :move_in?
 
