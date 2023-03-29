@@ -33,7 +33,7 @@
               <% @property.rooms.each do |room| %>
                 <li class="flex-container">
             <div class="flex-item"><%= room.name %></div>
-            <%= link_to "", property_rooms_path(@property), class: "fa-solid fa-circle-info icon-color" %>
+            <%= link_to "", room_path(room), class: "fa-solid fa-circle-info icon-color" %>
             <div class="flex-item"><%= button_to "", property_room_path(@property, room), method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash trash-icon" %></div>
           </li>
               <% end %>
