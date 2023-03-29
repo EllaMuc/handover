@@ -1,5 +1,6 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
@@ -20,3 +21,6 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 /* Define fonts for body and headers */
 $body-font: "Lato", "sans-serif";
 $headers-font: "Lora", serif;
+h1,h2,h3, h4, h5, h6,p {
+  font-family: 'Alkatra', cursive !important;
+}
