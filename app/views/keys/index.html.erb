@@ -7,7 +7,9 @@
 
           <div class="card-header">
           <div class="d-flex align-items-center">
-          <i class="fa-solid fa-square-caret-left mr-2" onclick="history.go(-3);"></i>
+          <%= link_to property_path(@property), class: "black_icon" do %>
+                <i class="fa-solid fa-square-caret-left mr-2"></i>
+              <% end %>
             <h1>Keys</h1>
            </div>
           </div>
@@ -34,7 +36,7 @@
             </table>
           </div>
             <div class="card-footer">
-              <%= link_to "New Key", new_property_key_path, class: "btn btn-primary" %>
+              <%= link_to "New Key", new_property_key_path, class: "btn btn-outline-dark" %>
             </div>
           </div>
 

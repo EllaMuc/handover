@@ -4,7 +4,9 @@
       <div class="row">
         <div class= "card card-signup p-3">
             <div class="d-flex align-items-center">
-              <i class="fa-solid fa-square-caret-left mr-2" onclick="history.back();"></i>
+              <%= link_to property_path(@property), class: "black_icon" do %>
+                <i class="fa-solid fa-square-caret-left mr-2"></i>
+              <% end %>
               <h2>New Reading</h2>
             </div>
             <%= form_with(model: [@property, @reading]) do |form| %>
@@ -17,7 +19,7 @@
                 <%= form.text_field :result, class: "form-control form-control-lg", placeholder: "Enter result of meter reading" %>
               </div>
               <div>
-                <a href="#"  type="submit" class="btn btn-primary btn-lg" onclick="document.querySelector('form').submit();">
+                <a href="#"  type="submit" class="btn btn-outline-dark btn-lg" onclick="document.querySelector('form').submit();">
                   <i class="fa-solid fa-ruler mr-2"></i>
                   Create Reading
                 </a>

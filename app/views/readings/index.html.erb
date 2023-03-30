@@ -5,7 +5,9 @@
         <div class="card card-signup p-3">
           <div class="card-header">
             <div class="d-flex align-items-center">
-              <i class="fa-solid fa-square-caret-left mr-2" onclick="history.go(-3);"></i>
+              <%= link_to property_path(@property), class:"black_icon" do %>
+                <i class="fa-solid fa-square-caret-left mr-2"></i>
+              <% end %>
               <h1>Readings</h1>
             </div>
           </div>
@@ -31,7 +33,7 @@
             </table>
           </div>
           <div class="card-footer">
-            <%= link_to "New Reading", new_property_reading_path, class: "btn btn-primary" %>
+            <%= link_to "New Reading", new_property_reading_path, class: "btn btn-outline-dark" %>
           </div>
         </div>
       </div>
