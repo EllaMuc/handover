@@ -6,13 +6,13 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "file_name",
+        @pdf = render pdf: "file_name",
                formats: [:html],
                disposition: :inline,
                layout: "pdf"
       end
     end
-    PostMailer.new_post.deliver_later
+    UserMailer.welcome(current_user.email, @pdf).deliver_now
   end
 
 end

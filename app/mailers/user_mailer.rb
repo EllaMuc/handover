@@ -6,9 +6,9 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.welcome.subject
   #
 
-  def welcome
-    #@user = params[:user] # Instance variable => available in view
-    mail(to: 'h.voorheijen@gmail.com', subject: 'Handover Certificate')
+  def welcome(email,pdf)
+    attachments['post.pdf'] = pdf
+    mail(to: email, subject: 'Handover Certificate')
     # This will render a view in `app/views/user_mailer`!
   end
 
