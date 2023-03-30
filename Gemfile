@@ -169,4 +169,3 @@ gem 'letter_opener', group: :development
 gem 'bootstrap-datepicker-rails'
 
 gem "bootstrap", "~> 5.2.3"
-
