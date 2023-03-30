@@ -13,6 +13,9 @@
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
+                  <%= link_to property_path(@property), class:"black_icon" do %>
+                    <i class="fa-solid fa-square-caret-left mr-2"></i>
+                  <% end %>
                   <% @room.damages.each_with_index do |damage, index| %>
                   <% new_class = index == 0 ? "active" : "" %>
                     <% if damage.photo.attached? %>
