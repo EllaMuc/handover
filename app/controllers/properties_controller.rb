@@ -22,7 +22,6 @@ class PropertiesController < ApplicationController
   def show
     @property = Property.find(params[:id])
     user = User.first
-    #UserMailer.welcome.deliver_now
   end
 
   private
