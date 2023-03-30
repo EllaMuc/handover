@@ -18,13 +18,23 @@
       <tr>
         <th>Name</th>
         <th>Description</th>
+        <th>Damage</th>
+        <th>Damage description</th>
+        <th>Damage Image</th>
+
       </tr>
     </thead>
     <tbody>
-      <%@rooms.each do |room| %>
+      <% @rooms.each do |room| %>
         <tr>
           <td><%= room.name %></td>
           <td><%= room.description %></td>
+          <% room.damages.each do |dam|%>
+            <td><%= dam.title %></td>
+            <td><%= dam.description %></td>
+            <td><%= cl_image_tag dam.photo.key, height: 100, width: 200, crop: :fill %></td>
+          <% end %>
+
         </tr>
       <% end %>
     </tbody>

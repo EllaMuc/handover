@@ -7,9 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-require "open-uri"
 
-file = URI.open("https://example.com/image.jpg")
+
+
 damage = Damage.new(description: "Some damage description")
-damage.photos.attach(io: file, filename: "image.jpg", content_type: ["image/jpeg", "image/jpg", "image/png"])
+damage.photo.attach(io: File.open(Rails.root.join("app/assets/images/the_bel_air_house.jpg")), filename: "image.jpg")
 damage.save
