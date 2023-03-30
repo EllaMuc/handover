@@ -1,25 +1,53 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<section class="vh-100" style="background-color: #9A616D;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+              <div class="d-flex align-items-end mb-3 pb-1" style="height: 30%;">
+                <span class="h1 fw-bold mb-0" class="text-center" style="margin-bottom: 50px;">Handover</span>
+              </div>
+                <img src="https://insight.rwabusiness.com/media/1827/istock-1132329631-handover_web.jpg?anchor=center&mode=crop&width=1140&height=550&rnd=132417041690000000"
+                alt="login form" class="rounded w-100 vh-300" style="margin-left: 20px; border-radius: 0.5rem 0.5rem 0.5rem 1rem;" style="object-fit: cover; object-position: left;"/>
+                        </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+                <h2>Sign up</h2>
+
+                  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= f.error_notification %>
+
+                    <div class="form-inputs">
+                      <%= f.input :email,
+                                  required: true,
+                                  autofocus: true,
+                                  input_html: { autocomplete: "email" }%>
+                      <%= f.input :password,
+                                  required: true,
+                                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                                  input_html: { autocomplete: "new-password" } %>
+                      <%= f.input :password_confirmation,
+                                  required: true,
+                                  input_html: { autocomplete: "new-password" } %>
+                    </div>
+
+                    <div class="form-actions">
+                      <%= f.submit "Sign up",  class: "btn btn-primary" %>
+                    </div>
+                  <% end %>
+
+                  <%= render "devise/shared/links" %>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.submit "Sign up",  class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
