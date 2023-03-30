@@ -6,31 +6,76 @@
   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
   <br>
   <h2>Address:</h2>
-  <p><%= @property.address %></p>
+  <p><%= @property.street %></p>
   <p><%= @property.city %></p>
   <p><%= @property.postcode %></p>
   <p><%= @property.move_in %></p>
   <p><%= @property.move_out %></p>
 
-  <h3>Rooms:</h3>
-
-  <% @rooms.each do |room| %>
-    <p><%= room.name %></p>
-    <p><%= room.description %></p>
-  <% end %>
+<h3>Rooms:</h3>
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@rooms.each do |room| %>
+        <tr>
+          <td><%= room.name %></td>
+          <td><%= room.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
 
   <h3>Keys:</h3>
-  <% @keys.each do |key| %>
-    <h4>Insert image must change can be found on views/posts/show.html.erb</h4>
-    <p><%= key.title %></p>
-    <p><%= key.description %></p>
-    <p><%= key.type_of_key %></p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @keys.each do |key| %>
+        <tr>
+          <td><%= key.title %></td>
+          <td><%= key.description %></td>
+          <td><%= key.type_of_key %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-  <h3>Meter readings:</h3>
-  <% @property.readings.each do |reading| %>
-    <h4>Insert image must change can be found on views/posts/show.html.erb</h4>
-    <p><%= reading.type_of_reading  %></p>
-    <p><%= reading.result %></p>
-  <% end %>
-</div>
+<h3>Meter readings:</h3>
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@property.readings.each do |reading| %>
+        <tr>
+          <td><%=reading.type_of_reading%></td>
+          <td><%= reading.result %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
+
+<p><strong>Landlord Print Name:</strong></p>
+ <span style="border:1px solid black;height:30px;width:100%;" class="disblock"></span>
+
+<p><strong>Landlord Signature:</strong></p>
+ <span style="border:1px solid black;height:30px;width:100%;" class="disblock"></span>
+
+ <p><strong>Tenant Print Name:</strong></p>
+ <span style="border:1px solid black;height:30px;width:100%;" class="disblock"></span>
+
+<p><strong>Tenant Signature:</strong></p>
+ <span style="border:1px solid black;height:30px;width:100%;" class="disblock"></span>

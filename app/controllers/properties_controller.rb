@@ -1,5 +1,4 @@
 class PropertiesController < ApplicationController
-
   def index
     @properties = Property.where(user: current_user)
   end
@@ -29,6 +28,6 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:address, :city, :postcode, :move_in, :move_out, :visible)
+    params.require(:property).permit(:street, :city, :postcode, :move_in, :move_out, :visible)
   end
 end

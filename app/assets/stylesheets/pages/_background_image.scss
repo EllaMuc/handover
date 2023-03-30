@@ -21,7 +21,7 @@
 }
 
 .font-awesome-font {
-  font-family: "Font Awesome 5 Free";
+ /* font-family: "Font Awesome 5 Free"; */
 }
 
 .propertyBackground{
@@ -29,13 +29,21 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 70vh;
+  height: 80vh;
   z-index: 50;
+}
+
+.belAir{
+  background: linear-gradient(to top, #fff1eb 0%, #c3dfe0 100%);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('the_bel_air_house.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 68px;
 }
 
 .white-text{
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 
 .half-and-half{
@@ -48,16 +56,19 @@
   background: linear-gradient(to top, #fff1eb 0%, #c3dfe0 100%);
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('modernist-decor-inspiration-08.webp');
   background-size: cover;
+  position: center center;
   background-repeat: no-repeat;
   padding-top: 68px;
 }
 
 .back_grad_color p {
   color: white;
+  text-shadow: 2px 2px black;
 }
 
 .back_grad_color ol li{
   color:white;
+  text-shadow: 2px 2px black;
 }
 
 .property-create{
@@ -65,18 +76,58 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100vh;
+  //min-height: max-content;
+  padding-bottom: 15vh;
 
 }
 
+// .damageImage{
+//   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('damage_background');
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   height: 100vh;
 
-.cardbackground{
-  background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, #c3dfe0 15.9%, #bcd979 15.9%, #9dad6f 24.4%, #7d6d61 24.5%, #5e574d 66%);
-  color: white;
+// }
+
+.dark-image{
+  filter: brightness(70%);
 }
+
+.cardbackground1{
+  // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('exroom3.jpg');
+  // color: white;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.cardbackground2{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
 
 .cardbackground ul li{
   list-style-type: none;
+}
+
+.cardbackground2 h5{
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+.meterReading_cardStyle h5{
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .form-img{
@@ -101,10 +152,106 @@
 }
 
 
+
 .meterReading_cardStyle{
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('meter_reading.jpg');
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.card2{
+  border: none;
+ transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+ overflow:hidden;
+ border-radius:20px;
+ min-height:350px;
+   box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+
+
+ &.card-has-bg{
+ transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  background-size:120%;
+  background-repeat:no-repeat;
+
+  background-position: center center;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    }
+
+  &:hover {
+    transform: scale(0.98);
+     box-shadow: 0 0 5px -2px rgba(0,0,0,0.3);
+    background-size:130%;
+     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+
+    .card-img-overlay {
+      transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    //   background: rgb(35,79,109);
+      background: linear-gradient(0deg, rgba(4,69,114,0.5) 0%, rgba(4,69,114,1) 100%);
+     }
+  }
+}
+
+ .card-meta{color:#26BD75}
+ .card-body{
+   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+ &:hover {
+   .card-body{
+     margin-top:30px;
+     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+   }
+ cursor: pointer;
+ transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+ .card-img-overlay {
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+//  background: rgb(35,79,109);
+background: linear-gradient(0deg, rgba(35,79,109,0.3785889355742297) 0%, rgba(69,95,113,1) 100%);
+}
+}
+
+.card3 {
+    height: 250px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    background-size: cover !important;
+    color: white;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+
+
+
+.damageImage {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image_url('damage_background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 30vh;
+  padding-top: 50px;
+  height: fit-content;
+}
+
+.carousel-caption {
+  font-size: 26px;
+}
+
+.carousel-margin {
+  margin-top: 55px;
+
+}
+
+i:hover{
+  text-decoration: none;
+  list-style-type: none;
 }
